@@ -1,0 +1,40 @@
+{
+  "name": "@rispa/react-tools",
+  "version": "0.1.0",
+  "main": "./src/index.js",
+  "dependencies": {
+    "@rispa/babel": "*",
+    "@rispa/redux": "*",
+    "@rispa/ui-kit": "*",
+    "react-redux-promise-listener": "^1.0.0",
+    "react": "^15.5.4"
+  },
+  "devDependencies": {
+    "prop-types": "^15.5.6"
+  },
+  "scripts": {
+    "lint": "rispa-eslint .",
+    "lint:fix": "rispa-eslint . --fix",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@rispa))"
+    ],
+    "collectCoverageFrom": [
+      "src/redux/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  }
+}
